@@ -6,10 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class HomePageController {
+public class HomePageController {   
     @RequestMapping(path = "/home", method = RequestMethod.GET)
-    public String showAdminPage(Model model) {
-        System.out.println("i am here.");
+    public String showHomePage(Model model) {
         return "home";
     }
 }

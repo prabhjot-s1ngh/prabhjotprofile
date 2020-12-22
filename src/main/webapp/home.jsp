@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
         <style>
+            body{
+                color:#95541c;
+            }
             th, td {
                 padding: 10px;
             }
@@ -18,13 +21,23 @@
             }
             .jumbotron{
                 margin:0px auto;
-                background: #000000;
+                background: #fcd752;
                 color:floralwhite;
+            }
+            .card-body{
+                background: #f4f2f3;
+            }
+            .card-title{
+                color:#43260d;
+            }
+            .btn{
+                background-color:#dd8e4a;
+                border-color: #dd8e4a;
             }
         </style>
     </head>
-    <body>
-        <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
+    <body style="background-color: #f6f4f9;">
+        <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #f6f4f9;">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
                     <span class="navbar-toggler-icon"></span>
@@ -155,11 +168,11 @@
             <hr>  
         </div>
            
-        
-            <h4>CONTACT ME</h4>
+        <div class="jumbotron">
+        <h4>CONTACT ME</h4>
 
-        <div class="d-flex justify-content-center" style="background-color: #e3f2fd;">
-            </br>
+        <div class="d-flex justify-content-center" style="background-color: #fcd752;">
+           
             <table>
                 <tr>
                     <td>                               
@@ -185,7 +198,7 @@
                 </tr>
             </table>
         </div>
-
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  

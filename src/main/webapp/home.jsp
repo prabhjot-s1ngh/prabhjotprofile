@@ -1,4 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,17 +8,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-        <style>
+        <style>            
             body{
                 color:#95541c;
             }
             th, td {
                 padding: 10px;
             }
-            h5{
-                color:red;
+            h2{
+                color:#43260d;
             }
-            h4, h5{
+            h5{
+                color:#43260d;
+            }
+            h4{
                 text-align: center;
             }
             .jumbotron{
@@ -24,15 +29,26 @@
                 background: #fcd752;
                 color:floralwhite;
             }
+            footer{
+                background: #fcd752;
+                color:#43260d;
+            }
             .card-body{
                 background: #f4f2f3;
             }
             .card-title{
                 color:#43260d;
             }
+            .btn:hover{
+                background-color:#43260d;
+                border-color: #43260d;
+            }
             .btn{
-                background-color:#dd8e4a;
-                border-color: #dd8e4a;
+                background-color:#95541c;
+                border-color: #95541c;
+            }
+            label{
+                color:#43260d;
             }
         </style>
     </head>
@@ -43,29 +59,26 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>                
                 <!-- Brand -->
-                <a class="navbar-brand" href="#">
-                    PRABHJOT SINGH
-                </a>
+                <a class="navbar-brand" href="#">PRABHJOT SINGH</a>
 
                 <!-- Links -->
                 <div class="collapse navbar-collapse" id="Navbar">
                     <ul class="navbar-nav">
 
                         <li class="nav-item font-weight-bold">
-                            <a class="nav-link" href="${contextPath}/PM/admin">HOME</a>
+                            <a class="nav-link" href="#">HOME</a>
                         </li>                 
                         <li class="nav-item dropdown font-weight-bold">
                             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                                 PROJECT'S
                             </a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="${contextPath}/PM/admin/projectAddForm"">JAVA PROJECT'S</a>
-                                <a class="dropdown-item" href="${contextPath}/PM/admin/projectViewEdit">NETWORK</a>
-                                <a class="dropdown-item" href="${contextPath}/PM/admin/projectViewEdit">ALL</a>
+                                <a class="dropdown-item" href="#javaProjects"">JAVA PROJECT'S</a>
+                                <a class="dropdown-item" href="#networkingProjects">NETWORK</a>
                             </div>
                         </li>     
                         <li class="nav-item font-weight-bold">
-                            <a class="nav-link" href="${contextPath}/PM/admin/memberViewEdit">CONTACT</a>
+                            <a class="nav-link" href="#contactMe">CONTACT</a>
                         </li>                
                     </ul>
                 </div>
@@ -98,7 +111,7 @@
         </div>      
 
         <br>
-        <div class="container">  
+        <div class="container" id ="javaProjects">  
             <hr>
             <h2>JAVA PROJECTS</h2></br>
             <div class="row">
@@ -134,7 +147,7 @@
             </div>
         </div>
         </br>
-        <div class="container"> 
+        <div class="container" id="networkingProjects"> 
             <hr>
             <h2>NETWORKING PROJECTS</h2></br>
             <div class="row">
@@ -165,40 +178,65 @@
                     </div>
                 </div>    
             </div>
-            <hr>  
         </div>
-           
-        <div class="jumbotron">
-        <h4>CONTACT ME</h4>
+        <footer class="footer">
+            <hr>
+            <div class="container" id="contactMe">
+                <div class="row">
+                    <div class="col-sm-3">  
+                    </div>
+                    <div class="col-sm-6">                
+                        <h2 align="center">CONTACT ME</h2>
+                        <hr>
+                        <form:form action="sendMail" method="GET">
+                            <div class="form-group">
+                                <label for="username">EMAIL</label>
+                                <input type="email" class="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Enter email"  name="userEmail"/> 
+                                <small id="emailHelp" class="form-text text-muted">Your email is safe with us.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">MESSAGE</label>
+                                <textarea class="form-control"  id="message" name="message" rows="3"></textarea>  
+                            </div>
+                            <input type="submit" class="btn btn-dark" value="Send">
+                        </form:form>     
+                    </div>
+                </div>
+                <hr>
+            </div>
 
-        <div class="d-flex justify-content-center" style="background-color: #fcd752;">
-           
-            <table>
-                <tr>
-                    <td>                               
-                        <label for="username">EMAIL</label>
-                    </td>
-                    <td>
-                        <input type="text" id="username" name="username"/>              
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="message">MESSAGE</label>
-
-                    </td>
-                    <td>
-                        <textarea  id="message" name="message">
-
-                        </textarea>  
-
-                    </td>
-                </tr>
-                <tr>
-                </tr>
-            </table>
-        </div>
-        </div>
+            <div class="container">
+                <div class="row">             
+                    <div class="col-4 offset-1 col-sm-2"> 
+                        <h5>Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#top">Home</a></li>
+                            <li><a href="#javaProjects">Project's</a></li>
+                            <li><a href="#contactMe">Contact Me</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-7 col-sm-5">
+                        <h5>Our Address</h5>
+                        <address>
+                            BRAMPTON, CANADA<br>
+                            Tel.: +514 347 7552<br>
+                            Email: psmavi93@gmail.com
+                        </address>
+                    </div>
+                    <div class="col-12 col-sm-4 align-self-center">
+                        <div class="text-center">
+                            <a href="https://www.facebook.com/profile.php?id=100002655231078">Facebook</a>
+                            <a href="http://linkedin.com/in/prabhjot-s1ngh">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row justify-content-center">             
+                    <div class="col-auto">
+                        <p>© Copyright 2020</p>
+                    </div>
+                </div>
+        </footer>  
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  

@@ -13,7 +13,7 @@ public class ServletInitializer implements WebApplicationInitializer{
     @Override
     public void onStartup(ServletContext sc) throws ServletException {
         AnnotationConfigWebApplicationContext webCtx = new AnnotationConfigWebApplicationContext();
-        webCtx.register(WebConfig.class);
+        webCtx.register(WebConfig.class,EmailConfig.class);
         webCtx.setServletContext(sc);
         
         ServletRegistration.Dynamic servlet = sc.addServlet("dispatcher", new DispatcherServlet(webCtx));

@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
@@ -7,49 +8,11 @@
         <title>Prabhjot Profile</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<c:url value="/resources/styles.css" />">
+        <link rel="icon" href="<c:url value="/resources/favicon.ico" />">
 
         <style>            
-            body{
-                color:#95541c;
-            }
-            th, td {
-                padding: 10px;
-            }
-            h2{
-                color:#43260d;
-            }
-            h5{
-                color:#43260d;
-            }
-            h4{
-                text-align: center;
-            }
-            .jumbotron{
-                margin:0px auto;
-                background: #fcd752;
-                color:floralwhite;
-            }
-            footer{
-                background: #fcd752;
-                color:#43260d;
-            }
-            .card-body{
-                background: #f4f2f3;
-            }
-            .card-title{
-                color:#43260d;
-            }
-            .btn:hover{
-                background-color:#43260d;
-                border-color: #43260d;
-            }
-            .btn{
-                background-color:#95541c;
-                border-color: #95541c;
-            }
-            label{
-                color:#43260d;
-            }
+
         </style>
     </head>
     <body style="background-color: #f6f4f9;">
@@ -97,7 +60,7 @@
             <h2>RESUME</h2></br>
             <div class="row">
                 <div class="col-sm-4">
-                    <a href="#" class="btn btn-primary btn-block">PROGRAMMING</a>
+                    <a href="<c:url value="/resources/PrabhjotResume.pdf"/>" class="btn btn-primary btn-block">PROGRAMMING</a>
                 </div>
                 <div class="col-sm-4">
                     <a href="#" class="btn btn-primary btn-block">NETWORKING</a>
